@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Movement Tracker</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='/css/main.css')}}">
+        <!--<script src="{{url_for('static', filename='/css/main.js')}}"></script>-->
+    </head>
+    <body>
+        <div class="body_div_class">
+            <div class="header_div_class">
+                <div class="title_icon_grid">
+                    <h1 style="text-align: center; padding-top: 10px; margin: 0px;">Movement Tracker</h1>
+                    <div class="icons_grid">
+                        <div class="icon_thing">
+                            <a href="/">
+                                <img src="{{url_for('static', filename='/import.png')}}" 
+                                style="height: 25px; width: 25px; margin: 0 auto;" title="import tcpt">
+                            </a>
+                        </div>
+                        <div class="icon_thing">
+                            <a href="{{url_for('export_tmr_file')}}">
+                                <img src="{{url_for('static', filename='/share.png')}}"
+                                style="height: 30px; width: 30px; border: 0; margin: 0 auto; cursor: pointer;" 
+                                title="export tracker">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-header_class">
+                    <div class="grid-child_icon"><h4> </h4></div>
+                    <div class="grid-child_header"><h4>TMR Name</h4></div>
+                    <div class="grid-child_header"><h4>TMR Number</h4></div>
+                    <div class="grid-child_header"><h4>Start DTG</h4></div>
+                    <div class="grid-child_header"><h4>PickUp Location</h4></div>
+                    <div class="grid-child_header"><h4>End DTG</h4></div>
+                    <div class="grid-child_header"><h4>DropOff Location</h4></div>
+                    <div class="grid-child_header"><h4>Requirements</h4></div>
+                    <div class="grid-child_header"><h4>Supporting Unit</h4></div>
+                    <div class="grid-child_header"><h4>Status</h4></div>
+                    <div class="grid-child_header"><h4>Comments</h4></div>
+                </div>
+            </div>
+            <div class="tmrs_grid_list">
+                {% for k, v in data.items() %}
+                <div class="grid-tmr_item">
+                    <div class="grid-child_tmr">
+                        <form method="POST" action="/edit" enctype="multipart/form-data" style="background-color: #afcf9c;">
+                            <button name="index_button" id="edit_button" type="submit" style="background-color: #afcf9c; border: 0;"
+                            value="{{k}}">
+                                <label for="edit_button"><img src="{{url_for('static', filename='/edit.png')}}"
+                                    style="height: 25px; width: 25px; margin-left: 5px; border: 0; cursor: pointer;"></label>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="grid-child_tmr"><h5>{{v['tmr name']}}</h5></div>
+                    <div class="grid-child_tmr"><h5>{{v['tmr num']}}</h5></div>
+                    <div class="grid-child_tmr"><h5>{{v['start dtg']}}</h5></div>
+                    <div class="grid-child_tmr"><h5>{{v['pickup location']}}</h5></div>
+                    <div class="grid-child_tmr"><h5>{{v['end dtg']}}</h5></div>
+                    <div class="grid-child_tmr"><h5>{{v['dropoff location']}}</h5></div>
+                    {% if v['support needed'] is float %}
+                    <div class="grid-child_tmr"><h5> </h5></div>
+                    {% else %}
+                    <div class="grid-child_tmr"><h5>{{v['support needed']}}</h5></div>
+                    {% endif %}
+                    <div class="grid-child_tmr"><h5>{{v['support unit']}}</h5></div>
+                    <div class="grid-child_tmr"><h5>{{v['status']}}</h5></div>
+                    {% if v['comments'] is float %}
+                    <div class="grid-child_tmr"><h5> </h5></div>
+                    {% else %}
+                    <div class="grid-child_tmr"><h5>{{v['comments']}}</h5></div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

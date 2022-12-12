@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Movement Tracker</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='/css/import_page_one.css')}}">
+        <!-- <script src="{{url_for('static', filename='/css/main.js')}}"></script> -->
+    </head>
+    <body>
+        <div class="body_div">
+            <div class="title_div">
+                <h1><b>Movement Tracker</b></h1>
+            </div>
+            <div class="form_div">
+                <h3>Import .xls file from TCPT</h3>
+                <div class="form_body">
+                    <form method="POST" action="/index" enctype="multipart/form-data" class="edit-form-container">
+                        <input id="file_input" type="file" name="file" accept=".xls" required>
+                        <button type="submit" class="import_submit_button" value="file">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

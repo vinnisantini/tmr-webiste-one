@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Movement Tracker</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='/css/edit.css')}}">
+    </head>
+    <body>
+        <div class="title_div">
+            <h1 style="text-align: center; padding-top: 10px; margin: 0px;">Movement Tracker</h1>
+        </div>
+        <div class="body_class">
+            <form class="form_class" name="num" method="POST" action="/submit_edit" enctype="multipart/form-data">
+                <div class="tmr_num_div">
+                    <div class="n_div">
+                        <input name="num" type="text" value="{{data['num']}}" hidden>
+                        <label for="num"><h2>{{data['num']}}</h2></label>
+                    </div>
+                    <div class="n_div">
+                        <input name="name" type="text" value="{{data['name']}}" hidden>
+                        <label for="name "><h3>{{data['name']}}</h3></label>
+                    </div>
+                </div>
+                <div class="info_container">
+                    <div class="info_div">
+                        <div>
+                            <p>Start Date</p>
+                            <input name="start" type="text" value="{{data['start']}}">
+                        </div>
+                        <div>
+                            <p>Pickup Location</p>
+                            <input name="pickup" type="text" value="{{data['pickup']}}">
+                        </div>
+                    </div>
+                    <div class="info_div">
+                        <div>
+                            <p>End Date</p>
+                            <input name="end" type="text" value="{{data['end']}}">
+                        </div>
+                        <div>
+                            <p>Dropoff Location</p>
+                            <input name="dropoff" type="text" value="{{data['dropoff']}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="info_container">
+                    <div class="info_div">
+                        <div>
+                            <p>Requirements</p>
+                            {% if data['require'] is float %}
+                            <input name="require" type="text" placeholder="support needed">
+                            {% else %}
+                            <input name="require" type="text" value="{{data['require']}}">
+                            {% endif %}
+                        </div>
+                        <div>
+                            <p>Additional Comments</p>
+                            {% if data['comments'] is float %}
+                            <input name="comments" type="text" placeholder="comments">
+                            {% else %}
+                            <input name="comments" type="text" value="{{data['comments']}}">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="info_div">
+                        <div>
+                            <p>Supporting Unit</p>
+                            <input name="support" type="text" value="{{data['support']}}">
+                        </div>
+                        <div>
+                            <p>Status</p>
+                            <input name="status" type="text" value="{{data['status']}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="button_div">
+                    <button class="submit_button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

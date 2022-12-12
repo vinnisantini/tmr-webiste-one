@@ -1,0 +1,163 @@
+body {
+    background-color: #818e85;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 0px;
+}
+
+h4 { 
+    text-align: center;
+}
+
+.title_icon_grid {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr .05fr;
+    grid-gap: 10px;
+    padding: 0px;
+    margin: 0px;
+    margin-right: 10px;
+}
+
+.icons_grid {
+    align-items: center;
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    grid-gap: 5px;
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 20px;
+}
+
+.header_div_class {
+    align-content: center;
+    background-color: #a1c2a5;
+    border-radius: 0px 0px 25px 25px;
+    display: block;
+}
+
+.grid-header_class {
+    align-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: .1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+.grid-child_header {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.grid-tmr_item {
+    align-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: .25fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    background-color: #afcf9c;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    height: fit-content;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+}
+
+.grid-child_tmr {
+    padding: 0px;
+    margin: 0px;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+a { color: inherit; } 
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 10;
+  right: 10px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  width: fit-content;
+  padding: 0px;
+  background-color: #818e85;
+  border: 3px solid rgb(0, 0, 0);
+  align-content: center;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #a1c2a5;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: rgb(146, 0, 0);
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+/* The popup form - hidden by default */
+.edit-form-popup {
+  display: none;
+  position: fixed;
+  top: 10;
+  right: 10px;
+}
+
+/* Add styles to the form container */
+.edit-form-container {
+  width: fit-content;
+  padding: 0px;
+  background-color: #818e85;
+  border: 3px solid rgb(0, 0, 0);
+  align-content: center;
+}
+
+/* Set a style for the submit/login button */
+.edit-form-container .btn {
+  background-color: #a1c2a5;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.edit-form-container .cancel {
+  background-color: rgb(146, 0, 0);
+}
+
+/* Add some hover effects to buttons */
+.edit-form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}

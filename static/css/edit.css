@@ -1,0 +1,94 @@
+body {
+    background-color: #455346;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 0px;
+    align-content: center;
+    align-items: center;
+}
+
+.form_class {
+    align-content: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.button_div {
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+    bottom: -15%;
+    left: 37%;
+    -ms-transform: translate(-15%, 37%);
+    transform: translateX(-15%, 37%);
+}
+
+.title_div {
+    background-color: #a1c2a5;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+input[type=text] {
+    border: 2px solid #455346;
+    border-radius: 4px;
+    width: 350px;
+    height: 20px;
+    margin: 10px;
+    float: right;
+}
+
+.body_class {
+    margin: 50 auto;
+    background-color: #839e8671;
+    border-radius: 25px;
+    align-items: center;
+    align-content: center;
+    width: fit-content;
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.info_container {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.info_div {
+    width: fit-content;
+    margin: 0 auto;
+    align-content: center;
+}
+
+.tmr_num_div {
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 25px;
+}
+
+.n_div{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    align-content: center;
+}
+
+.submit_button {
+    background-color: #a1c2a5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    opacity: 0.8;
+    align-self: baseline;
+    border-radius: 15px;
+}
