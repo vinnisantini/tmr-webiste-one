@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file, request, send_from_directory
+from flask import Flask, render_template, send_file, request
 import os
 import tracker_logic as tl
 
@@ -6,6 +6,11 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 
 @app.route("/")
 def home():
+    result = tl.get_existing_tmrs()
+    return render_template('index.html', data=result)
+
+@app.route("/import")
+def import_file():
     return render_template('import_page.html')
 
 @app.route('/index', methods = ['POST', 'GET'])
@@ -76,7 +81,8 @@ def submit_edit():
 
 @app.route('/download')
 def export_tmr_file():
-    tl.export_movement_tracker(results)
+    res = tl.get_existing_tmrs()
+    tl.export_movement_tracker(res)
     file_excel = tl.format_excel()
 
     return send_file(file_excel, as_attachment=True)

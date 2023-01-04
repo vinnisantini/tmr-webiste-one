@@ -229,3 +229,20 @@ def remove_old(tmr_dic):
             }
 
     return current_list
+
+def get_existing_tmrs():
+    existing_tmrs = {}
+    if exists('UMCC Tracker.csv'):
+        # checking if the tracker already exits
+        df = pd.read_csv('UMCC Tracker.csv')
+
+        # creating a temporary list to store data
+        temp_list2 = [v for v in df.values]
+
+        # adding to dictonary for better organization & cleaning up the information
+        for index, i in enumerate(temp_list2):
+            existing_tmrs[index+1] = {'tmr name': i[0], 'tmr num': i[1], 'support needed': i[2],
+            'start dtg': i[3], 'pickup location': i[4], 'end dtg': i[5], 'dropoff location': i[6],
+            'support unit': i[7], 'status': i[8], 'comments': i[9]}
+
+    return existing_tmrs
